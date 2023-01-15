@@ -3,6 +3,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Student Email</string>
     <string name="prompt_password">Password</string>
+    <string name="prompt_password2">Confirm Password</string>
     <string name="prompt_name">Student Name</string>
     <string name="action_sign_in">Log In</string>
     <string name="action_sign_in_short">Sign in</string>
