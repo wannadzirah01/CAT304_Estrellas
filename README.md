@@ -1,2 +1,2 @@
 # CAT304_Estrellas
-Hello world :)
+Ride&Share is a carpooling application.
