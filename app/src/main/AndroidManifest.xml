@@ -13,13 +13,6 @@
         android:theme="@style/Theme.CAT304Project"
         tools:targetApi="31">
         <activity
-            android:name=".ReportActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:label="LOG IN">
