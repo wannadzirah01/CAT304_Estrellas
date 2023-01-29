@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    // simple method to show toast message
+    // method to display message to users
     private void displayMessage(String message) {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
     }
