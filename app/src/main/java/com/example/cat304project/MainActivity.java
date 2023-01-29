@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 //import com.example.cat304project.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     EditText studentName, password, password2, studentEmail;
     Button createAccount, logIn1;
     DBHelper DB;
+    //private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,9 +90,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void launchReport(View v){
-        //launch report activity
-        Intent i = new Intent(this, ReportActivity.class);
-        startActivity(i);
-    }
+
+
 }

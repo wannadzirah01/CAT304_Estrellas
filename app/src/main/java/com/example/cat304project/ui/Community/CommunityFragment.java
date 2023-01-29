@@ -1,5 +1,6 @@
 package com.example.cat304project.ui.Community;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,4 +35,5 @@ public class CommunityFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }

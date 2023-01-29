@@ -1,6 +1,8 @@
 package com.example.cat304project;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -32,5 +34,17 @@ public class BottomNavigation extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+
+    public void launchReport(View v){
+        //launch report section
+        Intent i = new Intent(this, ReportActivity.class);
+        startActivity(i);
+    }
+
+   public void launchPost(View v){
+        //launch post section
+       Intent i = new Intent(this, PostActivity.class);
+        startActivity(i);
+   }
 
 }
