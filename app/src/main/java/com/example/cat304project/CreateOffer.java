@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class OfferCarpool extends AppCompatActivity {
+public class CreateOffer extends AppCompatActivity {
 
     EditText startpoint, endpoint, date, time, fares, userGender;
     Button doneBtn;
@@ -21,7 +21,7 @@ public class OfferCarpool extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_offer_carpool);
+        setContentView(R.layout.activity_create_offer);
 
         startpoint = findViewById(R.id.startPoint);
         endpoint = findViewById(R.id.endPoint);
@@ -49,7 +49,7 @@ public class OfferCarpool extends AppCompatActivity {
         String bookingFares = fares.getText().toString();
         String driverGender = userGender.getText().toString();
 
-        CarpoolOffer OfferCarpool = new CarpoolOffer(sPoint, ePoint, bookingDate, bookingTime, bookingFares, driverGender);
+        CarpoolOfferList OfferCarpool = new CarpoolOfferList(sPoint, ePoint, bookingDate, bookingTime, bookingFares, driverGender);
 
         if(sPoint.isEmpty() || ePoint.isEmpty() || bookingDate.isEmpty() ||
         bookingTime.isEmpty() || bookingFares.isEmpty() || driverGender.isEmpty()){
