@@ -3,6 +3,7 @@ package com.example.cat304project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -12,14 +13,18 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.cat304project.databinding.BottomNavigationBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class BottomNavigation extends AppCompatActivity {
 
     private BottomNavigationBinding binding;
+    private Button logout;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         binding = BottomNavigationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -64,5 +69,34 @@ public class BottomNavigation extends AppCompatActivity {
         Intent i = new Intent(this, CreateOffer.class);
         startActivity(i);
     }
+
+    public void launchMap(View v){
+        //launch post section
+        Intent i = new Intent(this, MapsActivity.class);
+        startActivity(i);
+    }
+
+    public void logout(View v){
+        //launch post section
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+
+    /*public void logout(View v){
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(BottomNavigation.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+                //Intent i = new Intent(BottomNavigation.this,  MainActivity.class);
+                //startActivity(i);
+            }
+        });
+    }*/
+
+
 
 }
