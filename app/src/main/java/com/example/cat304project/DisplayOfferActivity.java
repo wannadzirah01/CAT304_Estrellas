@@ -36,10 +36,10 @@ public class DisplayOfferActivity extends AppCompatActivity {
                 list.clear();
 
                 for (DataSnapshot offerSnapshot : snapshot.getChildren()){
-                    Offer offerList = offerSnapshot.getValue(CarpoolOfferList.class);
-                    String txt = offerList.getStartPoint() + "\n" + offerList.getEndPoint() + "\n" +
+                    Offer offerList = offerSnapshot.getValue(Offer.class);
+                    String txt = "StartPoint: " + offerList.getStartPoint() + "\nEndpoint: " + offerList.getEndPoint() + "\n" +
                             offerList.getDate() + "\n" + offerList.getTime() + "\n" + offerList.getFares()
-                            + "\n" + offerList.getGender();
+                            + "\n" + offerList.getGender() + "\n" + offerList.getPhoneNum() + "\n";
                     list.add(txt);
                 }
                 adapter.notifyDataSetChanged();

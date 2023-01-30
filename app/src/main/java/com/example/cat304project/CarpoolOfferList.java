@@ -7,18 +7,20 @@ public class CarpoolOfferList extends Offer {
     private String time;
     private String fares;
     private String gender;
+    private String phoneNum;
 
     public CarpoolOfferList() {
     }
 
     public CarpoolOfferList(String startPoint, String endPoint, String date,
-                            String time, String fares, String gender) {
+                            String time, String fares, String gender, String phoneNum) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.date = date;
         this.time = time;
         this.fares = fares;
         this.gender = gender;
+        this.phoneNum = phoneNum;
     }
 
     public String getStartPoint() {
@@ -68,4 +70,8 @@ public class CarpoolOfferList extends Offer {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public String getPhoneNum() { return phoneNum; }
+
+    public void setPhoneNum(String phoneNum) { this.phoneNum = phoneNum; }
 }

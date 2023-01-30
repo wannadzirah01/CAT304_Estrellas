@@ -1,19 +1,20 @@
 package com.example.cat304project;
 
 public class Offer {
-    String startPoint, endPoint, date, time, fares, gender;
+    String startPoint, endPoint, date, time, fares, gender, phoneNum;
 
     public Offer() {
 
     }
 
-    public Offer(String startPoint, String endPoint, String date, String time, String fares, String gender) {
+    public Offer(String startPoint, String endPoint, String date, String time, String fares, String gender, String phoneNum) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.date = date;
         this.time = time;
         this.fares = fares;
         this.gender = gender;
+        this.phoneNum = phoneNum;
     }
 
     public String getStartPoint() {
@@ -39,4 +40,6 @@ public class Offer {
     public String getGender() {
         return gender;
     }
+
+    public String getPhoneNum() { return phoneNum; }
 }

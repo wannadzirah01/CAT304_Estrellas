@@ -40,7 +40,16 @@
             android:value="AIzaSyA5Ny8J6mSW_IQODQ1OX2BXgjyBkQMd1zw" />
 
         <activity
+            android:name=".EWalletActivity"
+            android:label="E-Wallet Page"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DisplayOfferActivity"
+            android:label="Carpool Offers Page"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

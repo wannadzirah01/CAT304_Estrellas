@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateOffer extends AppCompatActivity {
 
-    EditText startpoint, endpoint, date, time, fares, userGender;
+    EditText startpoint, endpoint, date, time, fares, userGender, phoneNum;
     Button doneBtn;
 
     DatabaseReference offerDB;
@@ -29,6 +29,7 @@ public class CreateOffer extends AppCompatActivity {
         time = findViewById(R.id.editTextTime);
         fares = findViewById(R.id.price);
         userGender = findViewById(R.id.gender);
+        phoneNum = findViewById(R.id.editTextPhone);
         doneBtn = findViewById(R.id.submitBtn);
 
         offerDB = FirebaseDatabase.getInstance().getReference().child("Offer");
@@ -48,11 +49,12 @@ public class CreateOffer extends AppCompatActivity {
         String bookingTime = time.getText().toString();
         String bookingFares = fares.getText().toString();
         String driverGender = userGender.getText().toString();
+        String pNum = phoneNum.getText().toString();
 
-        CarpoolOfferList OfferCarpool = new CarpoolOfferList(sPoint, ePoint, bookingDate, bookingTime, bookingFares, driverGender);
+        CarpoolOfferList OfferCarpool = new CarpoolOfferList(sPoint, ePoint, bookingDate, bookingTime, bookingFares, driverGender, pNum);
 
         if(sPoint.isEmpty() || ePoint.isEmpty() || bookingDate.isEmpty() ||
-        bookingTime.isEmpty() || bookingFares.isEmpty() || driverGender.isEmpty()){
+        bookingTime.isEmpty() || bookingFares.isEmpty() || driverGender.isEmpty() || pNum.isEmpty()){
             Toast.makeText(this, "Please enter all fields!", Toast.LENGTH_LONG).show();
         }else{
             offerDB.push().setValue(OfferCarpool);

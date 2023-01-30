@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -98,15 +97,12 @@ public class MainActivity extends AppCompatActivity {
                             displayMessage("Account has been successfully created!");
                             Intent i  = new Intent(getApplicationContext(), BottomNavigation.class);
                             startActivity(i);
-                            // after we created user account we need to update his profile picture and name
-                            //updateUserInfo( name ,pickedImgUri,mAuth.getCurrentUser());
                         }
                         else
                         {
                             // account creation failed
                             displayMessage("Failed to create new account!" + task.getException().getMessage());
                             createAccountBtn.setVisibility(View.VISIBLE);
-                            //loadingProgress.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
@@ -128,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
-            // the user has successfully picked an image
-            // we need to save its reference to a Uri variable
             pickedImgUri = data.getData() ;
             ImgUserPhoto.setImageURI(pickedImgUri);
         };

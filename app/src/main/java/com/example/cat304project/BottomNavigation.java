@@ -30,8 +30,6 @@ public class BottomNavigation extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_booking, R.id.navigation_community, R.id.navigation_user)
                 .build();
@@ -82,21 +80,10 @@ public class BottomNavigation extends AppCompatActivity {
         startActivity(i);
     }
 
-    /*public void logout(View v){
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(BottomNavigation.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
-                //Intent i = new Intent(BottomNavigation.this,  MainActivity.class);
-                //startActivity(i);
-            }
-        });
-    }*/
-
-
+    public void launchEWallet(View v){
+        // launch eWallet section
+        Intent i = new Intent(this, EWalletActivity.class);
+        startActivity(i);
+    }
 
 }
