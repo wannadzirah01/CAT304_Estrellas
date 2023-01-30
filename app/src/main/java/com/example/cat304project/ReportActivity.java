@@ -40,6 +40,7 @@ public class ReportActivity extends AppCompatActivity {
         }else{
             reportDB.push().setValue(reports);
             Toast.makeText(this, "Report has been submitted!", Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 

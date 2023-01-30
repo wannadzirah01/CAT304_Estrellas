@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 public class PostActivity extends AppCompatActivity {
 
     private ListView listView;
+    //private EditText stuEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +36,19 @@ public class PostActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         DatabaseReference postDB = FirebaseDatabase.getInstance().getReference().child("Posts");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String username = user.getDisplayName();
+
         postDB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
 
                 for(DataSnapshot postSnapshot : snapshot.getChildren()){
-                    list.add(postSnapshot.getValue().toString());
+                    Posts feedPosts = postSnapshot.getValue(NewsFeedPosts.class);
+                    String feedData = feedPosts.getStuEmail() + "\n\n" + feedPosts.getPostDetails();
+                    list.add(feedData);
                 }
                 adapter.notifyDataSetChanged();
             }
