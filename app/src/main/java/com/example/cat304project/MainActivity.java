@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private Button createAccountBtn;
     private ProgressBar loadingProgress;
     private FirebaseAuth mAuth;
+    DatabaseReference mainDB;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         phoneNum = (EditText) findViewById(R.id.studentPhone);
         createAccountBtn = (Button) findViewById(R.id.createAccount);
         Button logIn1Btn = (Button) findViewById(R.id.logIn1);
+        mainDB = FirebaseDatabase.getInstance().getReference().child("Users");
+
 
         //loadingProgress.setVisibility(View.INVISIBLE);
         mAuth = FirebaseAuth.getInstance();
@@ -59,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 final String password2 = userPassword2.getText().toString();
                 final String name = userName.getText().toString();
                 final String phone = phoneNum.getText().toString();
+                Users users = new Users(email,name,phone);
+
 
                 if( email.isEmpty() || name.isEmpty() || password1.isEmpty()  || !password1.equals(password2) || phone.isEmpty()) {
                     // display error message
@@ -68,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     // CreateUserAccount method will try to create the user if the email is valid
+                    mainDB.push().setValue(users);
                     CreateUserAccount(email,name,password1,phone);
                 }
             }
