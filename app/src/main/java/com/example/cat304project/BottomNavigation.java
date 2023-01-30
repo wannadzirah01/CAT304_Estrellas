@@ -46,5 +46,4 @@ public class BottomNavigation extends AppCompatActivity {
         Intent i = new Intent(this, PostActivity.class);
         startActivity(i);
     }
-
 }

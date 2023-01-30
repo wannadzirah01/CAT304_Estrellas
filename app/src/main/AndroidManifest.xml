@@ -13,17 +13,25 @@
         android:theme="@style/Theme.CAT304Project"
         tools:targetApi="31">
         <activity
+            android:name=".CreatePost"
+            android:exported="false"
+            android:label="Create New Post">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PostActivity"
             android:exported="false"
-            android:label="@string/title_activity_post"
-            android:theme="@style/Theme.CAT304Project.NoActionBar">
+            android:label="News Feed">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ReportActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="Submit Report">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

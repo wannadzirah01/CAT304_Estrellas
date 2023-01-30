@@ -43,7 +43,7 @@ public class ReportActivity extends AppCompatActivity {
         }
     }
 
-    public void handleText(View v){
+    /*public void handleText(View v){
         EditText t = findViewById(R.id.reportDetails);
         String input = t.getText().toString();
         //((TextView)findViewById(R.id.output)).setText(input);
@@ -53,5 +53,5 @@ public class ReportActivity extends AppCompatActivity {
         } else{
             Toast.makeText(this, "Report is successfully submitted!", Toast.LENGTH_LONG).show();
         }
-    }
+    }*/
 }

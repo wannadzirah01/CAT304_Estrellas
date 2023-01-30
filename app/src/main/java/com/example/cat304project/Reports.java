@@ -6,7 +6,6 @@ public class Reports {
     public Reports(String reportData){
         this.reportData = reportData;
     }
-
     public String getReportData() {
         return reportData;
     }
