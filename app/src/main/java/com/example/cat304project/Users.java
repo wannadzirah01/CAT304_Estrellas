@@ -1,10 +1,11 @@
 package com.example.cat304project;
 
 public class Users {
-    String email;
-    String name;
-    String phone;
 
+    public String name, email, phone;
+    public Users(){
+
+    }
     public Users(String email, String name, String phone) {
         this.email = email;
         this.name = name;

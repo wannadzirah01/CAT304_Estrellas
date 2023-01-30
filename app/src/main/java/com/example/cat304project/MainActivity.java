@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
                     createAccountBtn.setVisibility(View.VISIBLE);
                     //loadingProgress.setVisibility(View.INVISIBLE);
                 }
+                else if(email.contains("@student.usm.my")==false){
+                    displayMessage("User must use student email to register!");
+                }
                 else {
                     // CreateUserAccount method will try to create the user if the email is valid
                     mainDB.push().setValue(users);
