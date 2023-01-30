@@ -46,4 +46,10 @@ public class BottomNavigation extends AppCompatActivity {
         Intent i = new Intent(this, PostActivity.class);
         startActivity(i);
     }
+
+    public void launchOfferCarpool(View v){
+        // launch section for driver to add new carpool offers
+        Intent i = new Intent(this, OfferCarpool.class);
+        startActivity(i);
+    }
 }

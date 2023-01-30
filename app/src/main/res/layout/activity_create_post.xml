@@ -7,7 +7,7 @@
     tools:context=".CreatePost">
 
     <EditText
-        android:id="@+id/postDetails"
+        android:id="@+id/endPoint"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:layout_marginTop="40dp"
@@ -33,13 +33,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonCreate"
+        android:id="@+id/submitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="done"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/endPoint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
