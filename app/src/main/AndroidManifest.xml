@@ -73,6 +73,7 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
+            android:label="Profile Page"
             android:exported="false" />
         <activity
             android:name=".CreatePost"

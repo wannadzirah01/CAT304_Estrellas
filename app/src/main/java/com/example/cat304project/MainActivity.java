@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     createAccountBtn.setVisibility(View.VISIBLE);
                     //loadingProgress.setVisibility(View.INVISIBLE);
                 }
-                else if(email.contains("@student.usm.my")==false){
+                else if (email.contains("@student.usm.my") == false) {
                     displayMessage("User must use student email to register!");
                 }
                 else {

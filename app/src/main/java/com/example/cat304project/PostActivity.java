@@ -47,7 +47,8 @@ public class PostActivity extends AppCompatActivity {
 
                 for(DataSnapshot postSnapshot : snapshot.getChildren()){
                     Posts feedPosts = postSnapshot.getValue(NewsFeedPosts.class);
-                    String feedData = feedPosts.getStuEmail() + "\n\n" + feedPosts.getPostDetails();
+                    String feedData = feedPosts.getStuEmail() + "\n\n"
+                            + feedPosts.getPostDetails();
                     list.add(feedData);
                 }
                 adapter.notifyDataSetChanged();
